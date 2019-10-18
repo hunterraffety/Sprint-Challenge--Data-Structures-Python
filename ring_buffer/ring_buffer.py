@@ -47,9 +47,12 @@ class RingBuffer:
     # before: self.storage, ['a', 'b', 'c', None, None], item: d
     # after: self.storage, ['a', 'b', 'c', 'd', None], item: d
     pass
+    
 
   def get(self):
     #The get method returns all of the elements in the buffer in a list in their given order. It should not return any None values in the list even if they are present in the ring buffer.
     #this needs to return a list but have a condition of a given value being "is not "None" it seems.
-    print(f"self: {self}")
+    print(f"self.storage: {self.storage}")
+    for x in self.storage:
+      print(x)
     pass
