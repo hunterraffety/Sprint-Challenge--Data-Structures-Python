@@ -42,6 +42,43 @@ class LinkedList:
     # if we've gotten here, then the target node isn't in our list
     return False
 
+
+    # # reference to the next node in the list
+    # self.next_node = next_node
+
+
   def reverse_list(self):
     # TO BE COMPLETED
+    #need to set up a current, next, and prev. prev isn't there because this isn't a dll.
+    current = self.head
+    next = None
+    previous = None
+
+    while current is not None:
+      # print(f"current.value: {current.value}, current.next_node: {current.next_node.value} ") #this breaks
+      next = current.next_node
+      current.next_node = previous #switch
+      previous = current #swap
+      current = next #another swap
+      self.head = previous
     pass
+
+    # cur = self
+    # new = cur.next
+    # cur.next = None
+    # while new != None:
+    # prev = cur
+    # cur = new
+    # new = cur.next
+    # cur.next = prev
+
+  #  prev = None
+  #  current = listHead
+  #  next = listHead.next
+  
+  #  while current:
+  #      next = current.next
+  #      current.next = prev
+  #      prev = current
+  #      current = next
+  #  listhead = prev
