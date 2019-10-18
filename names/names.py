@@ -110,3 +110,6 @@ print (f"runtime: {end_time - start_time} seconds")
     #     self.assertFalse(self.bst.contains(8))
 
 #need to modify my bst class to compare values of similarity in strings not numbers?
+
+#original O(n^2) (two loops)
+#this: O(log n)
