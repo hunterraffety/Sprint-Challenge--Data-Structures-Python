@@ -49,7 +49,9 @@ class RingBuffer:
     #compare?
     if self.current == self.capacity:
       print(f"wwwwww")
-      print(f"self.current: {self.current}, self.capacity: {self.capacity}")#this is not firing
+      print(f"self.current: {self.current}, self.capacity: {self.capacity}")  #this is not firing -- it is actually firing, you just can't see it because of how the tests run.
+      #we need to compare to reinitialize the beginning of where items should be put in to the buffer because we are at capacity, so next time this runs, it will insert where the first "oldest" one was from the previous "filling up" of the buffer. i think. test is failing.
+      self.current = 0
     pass
     
 
@@ -59,4 +61,20 @@ class RingBuffer:
     #print(f"self.storage: {self.storage}")
     for x in self.storage:
       print(x)
+      # a
+      # b
+      # c
+      # d
+      # None
+      # F
+    #this is not right because 1. we have a none and 2. there are 6 items, and it's missing the E from the test. We need to return our list of everything except the Nones
+    return [x for x in self.storage if x is not None]
+    #i just really got the feeling of python being an "English" language
+    # f
+    # g
+    # h
+    # i
+    # e
+    # .
+    #test passes now but why is it spitting out a period at the end?
     pass
