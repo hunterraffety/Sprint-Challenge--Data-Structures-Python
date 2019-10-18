@@ -9,6 +9,7 @@ class BinarySearchTree:
 
     # Insert the given value into the tree
     def insert(self, value):
+        print(f"value: {value}")
         if value < self.value:  #checks if smaller, go left
         # go left
             if not self.left:
@@ -64,6 +65,7 @@ start_time = time.time()
 
 f = open('names_1.txt', 'r')
 names_1 = f.read().split("\n")  # List containing 10000 names
+print(names_1)
 f.close()
 
 f = open('names_2.txt', 'r')
@@ -79,7 +81,12 @@ duplicates = []
 
 #we need to set up a bst
 bst = BinarySearchTree(names_1)
+print(names_1)
 for x in names_1:
+    #print(x)
+    bst.insert(x)
+    
+for x in bst:
     print(x)
 
 end_time = time.time()
@@ -96,3 +103,5 @@ print (f"runtime: {end_time - start_time} seconds")
     #     self.bst.insert(7)
     #     self.assertTrue(self.bst.contains(7))
     #     self.assertFalse(self.bst.contains(8))
+
+#need to modify my bst class to compare values of similarity in strings not numbers?
