@@ -9,7 +9,7 @@ class BinarySearchTree:
 
     # Insert the given value into the tree
     def insert(self, value):
-        print(f"value: {value}")
+        # print(f"value: {value}")
         if value < self.value:  #checks if smaller, go left
         # go left
             if not self.left:
@@ -53,19 +53,19 @@ class BinarySearchTree:
 
     # Call the function `cb` on the value of each node
     # You may use a recursive or iterative approach
-    def for_each(self, cb):
-        cb(self.value)
+    # def for_each(self, cb):
+    #     cb(self.value)
 
-        if self.left:
-            self.left.for_each(cb)
-        if self.right:
-            self.right.for_each(cb)
+    #     if self.left:
+    #         self.left.for_each(cb)
+    #     if self.right:
+    #         self.right.for_each(cb)
 
 start_time = time.time()
 
 f = open('names_1.txt', 'r')
 names_1 = f.read().split("\n")  # List containing 10000 names
-print(names_1)
+# print(names_1)
 f.close()
 
 f = open('names_2.txt', 'r')
@@ -80,14 +80,19 @@ duplicates = []
 #             duplicates.append(name_1)
 
 #we need to set up a bst
-bst = BinarySearchTree(names_1)
-print(names_1)
-for x in names_1:
+bst = BinarySearchTree(names_1[0])
+# print(names_1[0])
+for x in names_1[1:]:
     #print(x)
     bst.insert(x)
+#this is going to load up the names into the bst binary search tree
     
-for x in bst:
-    print(x)
+# for x in bst:
+#     print(x)
+
+for y in names_2:
+    if bst.contains(y):
+        duplicates.append(y)
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
