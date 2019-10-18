@@ -41,6 +41,11 @@ class RingBuffer:
     #okay this is setting the first item in the buffer and overwriting it like so
     # before: self.storage, ['a', None, None, None, None], item: b
     # after: self.storage, ['b', None, None, None, None], item: b
+    #need to update current because we are adding an item upon invoking this method
+    self.current += 1
+    #now we see
+    # before: self.storage, ['a', 'b', 'c', None, None], item: d
+    # after: self.storage, ['a', 'b', 'c', 'd', None], item: d
     pass
 
   def get(self):
